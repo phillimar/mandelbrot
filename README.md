@@ -1,0 +1,2 @@
+# mandelbrot
+mandelbrots in c
