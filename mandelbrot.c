@@ -13,7 +13,7 @@ void map_colour(unsigned short index, unsigned short *rgb)
 
     unsigned short value = 65535 * (normalised_index * normalised_index * normalised_index * normalised_index * normalised_index * normalised_index * normalised_index);
 
-    /* flip endian-ness */
+    /* PPM wants big-endian, so flip endian-ness if we're on a little-endian system (arm in my case)  */
     unsigned short high = (value & 0xff00) >> 8;
     unsigned short low = (value & 0x00ff) << 8;
     value = high | low;
